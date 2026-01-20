@@ -21,7 +21,9 @@ app.add_middleware(
 )
 
 # Model configuration
-MODEL_PATH = "cataract_cnn_finetuned.pth"
+# Model configuration
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "cataract_cnn_finetuned.pth")
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 def load_model():
